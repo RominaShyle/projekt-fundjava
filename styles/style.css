@@ -1,0 +1,7 @@
+.logo {
+    max-width: 4%;
+}
+
+a.navbar-brand{
+    display: contents!important;
+}
