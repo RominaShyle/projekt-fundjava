@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.php">
   <img src="images/logo.png" alt="Logo" class="logo"></a>
@@ -10,15 +11,21 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
+      <!-- <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true){ ?>
+
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#"><?= $_SESSION['role']?></a>
       </li>
-    
+    <?php }?> -->
       </ul>
-    <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
+      <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true){ ?>
+
+      <ul class="navbar-nav  mt-2 mt-lg-0">
+      <li class="nav-item form-inline my-2 my-lg-0">
+        <a class="nav-link" href="logout.php">Log out</a>
+      </li>
+      </ul>
+<?php } else {?>
     <ul class="navbar-nav  mt-2 mt-lg-0">
     <li class="nav-item form-inline my-2 my-lg-0">
         <a class="nav-link" href="signup.php">Signup</a>
@@ -26,6 +33,7 @@
       <li class="nav-item">
         <a class="nav-link" href="login.php">Login</a>
       </li>
-      </ul>
+    </ul>
+    <?php }?>
   </div>
 </nav>    
